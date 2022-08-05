@@ -38,5 +38,14 @@ public class Word {
         int randomIndexPosition = (int)(Math.random() * (length + 1));
         this.word = words.get(randomIndexPosition);
     }
+
+    public int indexOfLetterInWord(char letter) {
+        for (int i=0; i<word.length(); i++) {
+            if (word.charAt(i) == letter) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
 

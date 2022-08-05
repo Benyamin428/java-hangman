@@ -1,11 +1,21 @@
 public class Display {
 
-    public void displayUnderscores(String word) {
-        String wordHidden = "";
+    private String hiddenWord;
+
+    public Display(String word) {
+        this.hiddenWord = "";
         for (int i=0; i<word.length(); i++) {
-            wordHidden+=" _ ";
+            this.hiddenWord+="_";
         }
-        System.out.println(wordHidden);
+    }
+
+    public void displayHiddenWord(String word, int indexPosition) {
+        if (indexPosition != -1) {
+            char[] letterArr = this.hiddenWord.toCharArray();
+            letterArr[indexPosition] = word.charAt(indexPosition);
+            this.hiddenWord = String.valueOf(letterArr);
+        }
+        System.out.println(this.hiddenWord);
     }
 
 }
