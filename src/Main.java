@@ -11,10 +11,10 @@ public class Main {
 
         display.displayHiddenWord(word.getWord(), new ArrayList<Integer>());
 
-        System.out.println(word.getWord());
-
         while(user.getCorrectLetters() != word.getWord().length()) {
             if (user.getLives() == 0) {
+                System.out.println("Game Over");
+                System.out.println("The word was " + word.getWord());
                 break;
             }
             System.out.println("Lives: " + user.getLives());
@@ -30,6 +30,8 @@ public class Main {
                 user.removeLife();
             }
         }
+
+        System.out.println("Well done you guessed the word!");
 
     }
 }
