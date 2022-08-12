@@ -38,7 +38,9 @@ public class Main {
             }
         }
 
-        System.out.println("Well done you guessed the word!");
+        if (user.getLives() > 0) {
+            System.out.println("Well done you guessed the word!");
+        }
 
     }
 }
