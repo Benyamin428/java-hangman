@@ -12,6 +12,10 @@ public class Display {
         }
     }
 
+    public String getHiddenWord() {
+        return hiddenWord;
+    }
+
     //Displays the letter to the user if they have guessed the corresponding letter correctly
     public void displayHiddenWord(String word, List<Integer> indexPositions) {
         if (!indexPositions.isEmpty()) {
@@ -31,8 +35,10 @@ public class Display {
                 System.out.println();
                 System.out.println();
                 System.out.println();
-                System.out.println("___|___");
                 System.out.println();
+                System.out.println();
+                System.out.println();
+                System.out.println("___|___");
                 break;
             case 5:
                 System.out.println("   |");

@@ -12,8 +12,10 @@ public class Main {
         //Displays the initial underscores to represent the word length
         display.displayHiddenWord(word.getWord(), new ArrayList<Integer>());
 
+        System.out.println(word.getWord());
+
         //Loops through until the user has guessed the word
-        while(user.getCorrectLetters() != word.getWord().length()) {
+        while(user.getCorrectLetters() < word.getWord().length()) {
             //Breaks the loops if the user's life has dropped to 0
             if (user.getLives() == 0) {
                 display.drawHangman(user.getLives());
@@ -27,15 +29,18 @@ public class Main {
             char letterEntered = user.getUserInput();
             List<Integer> indexPositionsOfLetter = word.indexOfLetterInWord(letterEntered);
 
-            display.displayHiddenWord(word.getWord(), indexPositionsOfLetter);
-
             //Checks to see if the letter the user has entered is in the word
             if (!indexPositionsOfLetter.isEmpty()) {
-                user.incrementCorrectLetter(indexPositionsOfLetter.size());
+                if (!display.getHiddenWord().contains(String.valueOf(letterEntered))) {
+                    user.incrementCorrectLetter(indexPositionsOfLetter.size());
+                }
             }
             else {
                 user.removeLife();
             }
+
+            display.displayHiddenWord(word.getWord(), indexPositionsOfLetter);
+
         }
 
         if (user.getLives() > 0) {
