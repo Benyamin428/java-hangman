@@ -11,6 +11,7 @@ public class Word {
         this.word = "";
         this.words = new ArrayList<>();
 
+        //Reads from the text file and inserts the words into an ArrayList
         try
         {
             File file = new File("WordList.txt");
@@ -34,11 +35,14 @@ public class Word {
     public String getWord() {
         return word;
     }
+
+    //Finds a random word from the ArrayList
     public void setWord() {
         int randomIndexPosition = (int)(Math.random() * (length + 1));
         this.word = words.get(randomIndexPosition);
     }
 
+    //Finds the index positions of all the occurences where the letter the user enters matches the letter in the word
     public ArrayList<Integer> indexOfLetterInWord(char letter) {
         ArrayList<Integer> indexPositions = new ArrayList<Integer>();
         for (int i=0; i<word.length(); i++) {
