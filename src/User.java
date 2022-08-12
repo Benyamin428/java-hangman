@@ -6,7 +6,7 @@ public class User {
     private int correctLetters;
 
     public User() {
-        this.lives = 9;
+        this.lives = 7;
         this.correctLetters = 0;
     }
 

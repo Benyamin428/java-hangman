@@ -16,10 +16,13 @@ public class Main {
         while(user.getCorrectLetters() != word.getWord().length()) {
             //Breaks the loops if the user's life has dropped to 0
             if (user.getLives() == 0) {
-                System.out.println("Game Over");
+                display.drawHangman(user.getLives());
                 System.out.println("The word was " + word.getWord());
                 break;
             }
+
+            display.drawHangman(user.getLives());
+
             System.out.println("Lives: " + user.getLives());
             char letterEntered = user.getUserInput();
             List<Integer> indexPositionsOfLetter = word.indexOfLetterInWord(letterEntered);
