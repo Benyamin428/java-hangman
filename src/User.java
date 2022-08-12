@@ -18,8 +18,8 @@ public class User {
         return correctLetters;
     }
 
-    public void incrementCorrectLetter() {
-        this.correctLetters+=1;
+    public void incrementCorrectLetter(int incrementAmount) {
+        this.correctLetters+=incrementAmount;
     }
 
     public void removeLife() {

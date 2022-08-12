@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Display {
 
     private String hiddenWord;
@@ -9,10 +11,12 @@ public class Display {
         }
     }
 
-    public void displayHiddenWord(String word, int indexPosition) {
-        if (indexPosition != -1) {
+    public void displayHiddenWord(String word, List<Integer> indexPositions) {
+        if (!indexPositions.isEmpty()) {
             char[] letterArr = this.hiddenWord.toCharArray();
-            letterArr[indexPosition] = word.charAt(indexPosition);
+            for(int i=0; i<indexPositions.size(); i++) {
+                letterArr[indexPositions.get(i)] = word.charAt(indexPositions.get(i));
+            }
             this.hiddenWord = String.valueOf(letterArr);
         }
         System.out.println(this.hiddenWord);

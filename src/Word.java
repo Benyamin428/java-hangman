@@ -39,13 +39,14 @@ public class Word {
         this.word = words.get(randomIndexPosition);
     }
 
-    public int indexOfLetterInWord(char letter) {
+    public ArrayList<Integer> indexOfLetterInWord(char letter) {
+        ArrayList<Integer> indexPositions = new ArrayList<Integer>();
         for (int i=0; i<word.length(); i++) {
             if (word.charAt(i) == letter) {
-                return i;
+                indexPositions.add(i);
             }
         }
-        return -1;
+        return indexPositions;
     }
 }
 
